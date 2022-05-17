@@ -10,8 +10,8 @@ export class ChatGateway {
   @WebSocketServer()
   server;
 
-  @SubscribeMessage('message')
+  @SubscribeMessage('control')
   handleMessage(@MessageBody() message: string): void {
-    this.server.emit('message', message);
+    this.server.emit('control', message);
   }
 }
